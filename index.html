@@ -1,25 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>THE CHEFZ | Working Hours Update Site</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="THE CHEFZ Working Hours Update Site" />
+  <title>THE CHEFZ | Working Hours Update Site</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
+  <main class="page">
 
-  <header class="topbar">
-    <div class="topbar__side"></div>
-    <img src="logo.png" alt="THE CHEFZ" class="logo">
-    <div class="topbar__side topbar__side--right">
-      <a href="mailto:info@thechefz.co" class="icon-btn mail" aria-label="Email us">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
+    <!-- Top contact icons -->
+    <header class="topbar">
+      <a class="contact-icon email-icon" href="mailto:" aria-label="Email">
+        <span class="mail-shape" aria-hidden="true"></span>
       </a>
-      <a href="#" class="icon-btn whats" aria-label="WhatsApp us">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.5 15.3L2 22l4.8-1.5A10 10 0 1 0 12 2Zm0 18.2a8.1 8.1 0 0 1-4.2-1.2l-.3-.2-2.8.9.9-2.7-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1-1.4-.7-2.3-1.3-3.2-2.8-.2-.4.2-.4.6-1.2.1-.1 0-.3 0-.4l-.6-1.5c-.2-.4-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.2-1 1-1 2.4s1 2.8 1.1 3c.1.2 2 3 4.8 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.4-.6 1.6-1.1.2-.5.2-1 .1-1.1-.1-.1-.2-.2-.5-.3Z"/></svg>
-      </a>
-    </div>
-  </header>
 
+      <a class="contact-icon whatsapp-icon" href="#" aria-label="WhatsApp">
+        <span aria-hidden="true">◔</span>
+      </a>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+
+      <div class="brand-logo">
+        <img src="assets/logo(1).png" alt="THE CHEFZ" />
+      </div>
+
+      <div class="hero-content">
+
+        <div class="visual-column">
+          <div class="insight-visual">
+            <img src="assets/phone-mockup.png" alt="THE CHEFZ Insight mobile preview" />
+          </div>
+        </div>
+
+        <div class="copy-column">
+          <h1>Welcome to THE CHEFZ</h1>
+          <h2>Working Hours Update Site</h2>
+
+          <div class="intro-copy">
+            <p>You can inform us with your <strong>NEW Working Hours</strong></p>
+            <span>or</span>
+            <p>Learn How to Change the Working Hours by <strong>YOURSELF</strong></p>
+          </div>
+
+          <div class="actions">
+            <a class="action-button" href="#" id="informButton">
+              <img src="assets/calendar-days.svg" alt="" />
+              <span>Inform Us with New WHs</span>
+              <img class="arrow" src="assets/chevron-right.svg" alt="" />
+            </a>
+
+            <a class="action-button" href="#" id="learnButton">
+              <img src="assets/Icon.png" alt="" />
+              <span>Learn How to Change WHs</span>
+              <img class="arrow" src="assets/chevron-right.svg" alt="" />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Orange diagonal section -->
+      <section class="features">
+        <div class="features-inner">
+          <p class="features-lead">
+            Get real-time updates and insights<br>
+            on working hours to manage your operations better.
+          </p>
+
+          <div class="feature-grid">
+
+            <article class="feature">
+              <div class="feature-icon">
+                <img src="assets/clock-01.png" alt="" />
+              </div>
+              <h3>Real-time Updates</h3>
+              <p>Stay informed with the<br>latest working hours.</p>
+            </article>
+
+            <div class="feature-divider"></div>
+
+            <article class="feature">
+              <div class="feature-icon">
+                <img src="assets/horizontal-chart-01.png" alt="" />
+              </div>
+              <h3>Smart Insights</h3>
+              <p>Make data-driven decisions<br>to grow your business.</p>
+            </article>
+
+            <div class="feature-divider"></div>
+
+            <article class="feature">
+              <div class="feature-icon">
+                <img src="assets/Frame.png" alt="" />
+              </div>
+              <h3>Operational Efficiency</h3>
+              <p>Optimize your schedule<br>and improve productivity.</p>
+            </article>
+
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer-brand">THE CHEFZ</div>
+      <div class="footer-links">
+        <span>Insight</span>
+        <b>•</b>
+        <span>Data</span>
+        <b>•</b>
+        <span>Growth</span>
+      </div>
+    </footer>
+
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
