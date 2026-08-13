@@ -4,362 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>THE CHEFZ | Working Hours Update Site</title>
-<style>
-  :root{
-    --orange: #EF5B16;
-    --orange-dark: #D94E10;
-    --purple: #3D1937;
-    --purple-soft: #614561;
-    --cream: #FFFFFF;
-    --btn-bg: #FDF3F2;
-  }
-
-  *{ box-sizing: border-box; margin:0; padding:0; }
-
-  body{
-    font-family: 'Segoe UI', 'Poppins', Arial, sans-serif;
-    color: var(--purple);
-    background: #fff;
-    overflow-x: hidden;
-  }
-
-  a{ text-decoration:none; color:inherit; }
-
-  /* ---------- TOP BAR ---------- */
-  .topbar{
-    display:flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 24px 60px 0 60px;
-  }
-
-  .logo-box{
-    display:flex;
-    flex-direction: column;
-    width: 220px;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-  }
-  .logo-top{
-    background: var(--orange);
-    color:#fff;
-    text-align:center;
-    font-size: 22px;
-    font-weight:700;
-    padding: 10px 0 6px;
-    letter-spacing: 2px;
-  }
-  .logo-bottom{
-    background: var(--purple);
-    color:#fff;
-    text-align:center;
-    font-style: italic;
-    font-weight: 800;
-    font-size: 20px;
-    padding: 6px 0 10px;
-    letter-spacing: 1px;
-  }
-
-  .contact-icons{ display:flex; gap:10px; }
-  .icon-btn{
-    width: 38px; height: 38px;
-    border-radius: 8px;
-    display:flex; align-items:center; justify-content:center;
-    border: 2px solid;
-  }
-  .icon-btn.mail{ border-color: var(--orange); color: var(--orange); }
-  .icon-btn.whats{ border-color: #25D366; color:#25D366; background:#fff; }
-  .icon-btn svg{ width:18px; height:18px; }
-
-  /* ---------- HERO ---------- */
-  .hero{
-    position: relative;
-    padding: 40px 60px 0 60px;
-    display: grid;
-    grid-template-columns: 380px 1fr;
-    gap: 40px;
-    align-items: start;
-    overflow: hidden;
-  }
-
-  .phone-card{
-    position: relative;
-    background: linear-gradient(150deg, var(--orange) 45%, var(--purple) 45%);
-    border-radius: 26px;
-    padding: 26px 26px 40px;
-    min-height: 640px;
-    overflow: hidden;
-  }
-  .phone-card .badge{
-    color:#fff;
-    font-weight: 800;
-    font-size: 24px;
-    line-height: 1.05;
-    font-style: italic;
-  }
-  .phone-card .badge small{
-    display:block;
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 3px;
-    font-style: normal;
-    margin-top: 4px;
-  }
-  .phone-card .arabic-tagline{
-    color:#fff;
-    text-align:center;
-    font-weight:800;
-    font-size: 22px;
-    line-height: 1.5;
-    margin: 14px 0 18px;
-    direction: rtl;
-  }
-  .phone-mock{
-    background:#111;
-    border-radius: 28px;
-    padding: 8px;
-    width: 220px;
-    margin: 0 auto;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.35);
-  }
-  .phone-screen{
-    background:#fff;
-    border-radius: 20px;
-    overflow:hidden;
-    font-size: 9px;
-    padding-bottom: 8px;
-  }
-  .phone-statusbar{
-    display:flex; justify-content:space-between; padding: 8px 12px 4px; font-size: 10px; font-weight:600;
-  }
-  .phone-topline{
-    display:flex; justify-content:space-between; align-items:center; padding: 2px 12px 8px; border-bottom:1px solid #f0f0f0;
-  }
-  .phone-topline .who{ color: var(--orange); font-weight:700; font-size:10px;}
-  .phone-topline .sub{ font-size:9px; color:#333; }
-  .phone-wa{ width:16px; height:16px; background:#25D366; border-radius:50%; display:flex; align-items:center; justify-content:center;}
-  .phone-wa svg{ width:9px; height:9px; fill:#fff; }
-  .phone-banner{
-    margin: 8px 10px 0;
-    background: linear-gradient(120deg,#7a1f1f,#3d1010);
-    border-radius: 8px;
-    color:#fff;
-    padding: 10px;
-    font-size: 9px;
-  }
-  .phone-banner b{ display:block; font-size:10px; margin-bottom:2px;}
-  .phone-date{
-    margin: 8px 10px 0; background:#fdece3; color:var(--orange); font-size:8px; font-weight:700;
-    display:inline-block; padding:3px 8px; border-radius:6px;
-  }
-  .phone-row{
-    display:flex; justify-content:space-between; align-items:center;
-    margin: 10px 10px 0; font-size:9px; color:#333; font-weight:600;
-    border-bottom: 1px solid #f2f2f2; padding-bottom:8px;
-  }
-  .phone-stat{ display:flex; justify-content:space-between; margin:8px 10px 0; }
-  .phone-stat .num{ font-size:16px; font-weight:800; color:#222; }
-  .phone-stat .lbl{ font-size:8px; color:#999; }
-  .phone-stat .change{ color: var(--orange); font-size:9px; font-weight:700; }
-
-  .hero-right{ padding-top: 6px; }
-  h1.title{
-    font-size: 40px;
-    font-weight: 800;
-    color: var(--purple-soft);
-    line-height:1.2;
-  }
-  h1.title .accent{ display:block; color: var(--orange); font-size: 42px; }
-
-  .subtext{
-    margin-top: 22px;
-    font-size: 17px;
-    font-weight: 600;
-    color: var(--purple);
-    line-height: 1.7;
-  }
-  .subtext .or{ color: var(--orange); font-weight:800; }
-
-  .cta-row{
-    display:flex;
-    gap: 24px;
-    margin-top: 28px;
-    flex-wrap: wrap;
-  }
-  .btn{
-    display:flex; align-items:center; gap:10px;
-    background: var(--btn-bg);
-    border-radius: 10px;
-    padding: 16px 22px;
-    font-weight: 700;
-    font-size: 16px;
-    border: 1.5px solid;
-    min-width: 260px;
-    justify-content: space-between;
-    transition: transform .15s ease, box-shadow .15s ease;
-  }
-  .btn:hover{ transform: translateY(-2px); box-shadow: 0 8px 18px rgba(0,0,0,0.08); }
-  .btn.primary{ border-color: var(--orange); color: var(--orange); }
-  .btn.secondary{ border-color: var(--purple); color: var(--purple); }
-  .btn .left{ display:flex; align-items:center; gap:10px; }
-  .btn svg{ width:20px; height:20px; }
-
-  /* ---------- ORANGE BAND ---------- */
-  .band-wrap{
-    position: relative;
-    margin-top: 60px;
-  }
-  .band-clip{
-    background: var(--orange);
-    clip-path: polygon(0 40%, 100% 0%, 100% 100%, 0% 100%);
-    padding: 90px 60px 60px;
-  }
-  .band-heading{
-    color:#fff;
-    text-align:center;
-    font-size: 22px;
-    font-weight: 700;
-    max-width: 640px;
-    margin: 0 auto 50px;
-    line-height:1.5;
-  }
-
-  .features{
-    display:flex;
-    justify-content:center;
-    gap: 0;
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-  .feature{
-    flex:1;
-    text-align:center;
-    padding: 0 30px;
-    position: relative;
-    color:#fff;
-  }
-  .feature + .feature::before{
-    content:"";
-    position:absolute;
-    left:0; top: 10px; bottom:10px;
-    width:1px;
-    background: rgba(255,255,255,0.4);
-  }
-  .feature .icon-circle{
-    width: 76px; height:76px;
-    border: 2.5px solid #fff;
-    border-radius: 50%;
-    display:flex; align-items:center; justify-content:center;
-    margin: 0 auto 18px;
-  }
-  .feature .icon-circle svg{ width:34px; height:34px; stroke:#fff; fill:none; }
-  .feature h3{ font-size: 19px; font-weight:800; margin-bottom: 8px; }
-  .feature p{ font-size: 14px; line-height:1.5; opacity:.95; }
-
-  /* ---------- FOOTER ---------- */
-  footer{
-    display:flex;
-    justify-content: space-between;
-    align-items:center;
-    padding: 26px 60px;
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-  footer .brand{ font-weight:800; font-size: 18px; color: var(--purple); }
-  footer .tags{ display:flex; gap:8px; align-items:center; font-weight:600; color: var(--purple-soft); font-size:15px; }
-  footer .tags .dot{ color: var(--orange); }
-
-  /* ================= MOBILE ================= */
-  @media (max-width: 760px){
-    .topbar{ padding: 18px 20px 0; }
-    .logo-box{ width: 150px; }
-    .logo-top{ font-size:15px; padding:7px 0 4px; }
-    .logo-bottom{ font-size:13px; padding:4px 0 7px; }
-    .icon-btn{ width:30px; height:30px; }
-    .icon-btn svg{ width:14px; height:14px; }
-    .contact-icons{ gap:6px; }
-
-    .hero{
-      grid-template-columns: 1fr;
-      padding: 22px 20px 0;
-      text-align:center;
-    }
-    .phone-card{ display:none; }
-
-    h1.title{ font-size: 24px; }
-    h1.title .accent{ font-size: 24px; }
-    .subtext{ font-size: 13px; margin-top:12px; }
-    .cta-row{ flex-direction: column; gap: 14px; margin-top: 20px; }
-    .btn{ min-width: unset; width:100%; padding: 14px 18px; font-size:14px; }
-
-    .mobile-banner{
-      margin-top: 26px;
-      background: linear-gradient(150deg, var(--orange) 45%, var(--purple) 45%);
-      border-radius: 20px;
-      padding: 22px 20px 30px;
-      position: relative;
-      overflow:hidden;
-      display:flex;
-      align-items:center;
-      gap: 16px;
-      text-align:left;
-    }
-    .mobile-banner .badge{
-      color:#fff; font-weight:800; font-style: italic; font-size:15px; line-height:1.1;
-      position:absolute; top:16px; left:16px;
-    }
-    .mobile-banner .badge small{ display:block; font-size:8px; font-weight:600; letter-spacing:2px; font-style:normal; }
-    .mobile-banner .phone-mock{ width: 110px; margin:0; flex-shrink:0; }
-    .mobile-banner .copy{ color:#fff; padding-top: 30px; }
-    .mobile-banner .copy .ar{ direction: rtl; font-weight:800; font-size:16px; line-height:1.5; margin-bottom:8px; }
-    .mobile-banner .copy p{ font-size:12px; line-height:1.5; }
-    .mobile-banner .rule{ width:34px; height:2px; background:#fff; margin-top:10px; }
-
-    .band-wrap{ margin-top: 0; }
-    .band-clip{
-      clip-path: none;
-      padding: 40px 20px 40px;
-      border-radius: 60px 60px 0 0;
-      margin-top: -30px;
-    }
-    .band-heading{ display:none; }
-    .features{ flex-direction: column; gap: 22px; max-width: 100%; text-align:left; }
-    .feature{ display:flex; align-items:center; gap:16px; text-align:left; padding: 0 6px 18px; border-bottom: 1px solid rgba(255,255,255,0.35); }
-    .feature:last-child{ border-bottom:none; padding-bottom:0; }
-    .feature + .feature::before{ display:none; }
-    .feature .icon-circle{ width:52px; height:52px; margin:0; flex-shrink:0; }
-    .feature .icon-circle svg{ width:24px; height:24px; }
-    .feature h3{ font-size:15px; margin-bottom:4px; }
-    .feature p{ font-size:12px; }
-
-    footer{
-      flex-direction: column;
-      background: var(--orange);
-      color:#fff;
-      padding: 26px 20px 30px;
-      border-radius: 0 0 0 0;
-      margin-top: -1px;
-      max-width: 100%;
-      gap: 8px;
-    }
-    footer .brand{ color:#fff; }
-    footer .tags{ color:#fff; }
-    footer .tags .dot{ color:#fff; }
-  }
-
-  /* hide desktop-only banner on mobile handled by phone-card display:none above */
-  .mobile-banner{ display:none; }
-  @media (max-width:760px){ .mobile-banner{ display:flex; } }
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <div class="topbar">
-    <div class="logo-box">
-      <div class="logo-top" style="font-family:'Times New Roman', serif; direction:rtl;">ذا شفـــز</div>
-      <div class="logo-bottom">THE CHEFZ</div>
-    </div>
+  <!-- ================= TOP BAR ================= -->
+  <header class="topbar">
+    <div class="topbar__spacer"></div>
+    <a href="#" class="logo">
+      <img src="assets/logo.png" alt="THE CHEFZ">
+    </a>
     <div class="contact-icons">
       <a href="mailto:info@thechefz.co" class="icon-btn mail" aria-label="Email us">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
@@ -368,105 +22,125 @@
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.5 15.3L2 22l4.8-1.5A10 10 0 1 0 12 2Zm0 18.2a8.1 8.1 0 0 1-4.2-1.2l-.3-.2-2.8.9.9-2.7-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1-1.4-.7-2.3-1.3-3.2-2.8-.2-.4.2-.4.6-1.2.1-.1 0-.3 0-.4l-.6-1.5c-.2-.4-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.2-1 1-1 2.4s1 2.8 1.1 3c.1.2 2 3 4.8 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.4-.6 1.6-1.1.2-.5.2-1 .1-1.1-.1-.1-.2-.2-.5-.3Z"/></svg>
       </a>
     </div>
-  </div>
+  </header>
 
-  <div class="hero">
-    <div class="phone-card">
-      <div class="badge">THE<br>CHEFZ<small>INSIGHT</small></div>
-      <div class="arabic-tagline">ضاعف أداء<br>مطعمك بنجاح</div>
-      <div class="phone-mock">
-        <div class="phone-screen">
-          <div class="phone-statusbar"><span>9:41</span><span>▂▄▆ 📶 🔋</span></div>
-          <div class="phone-topline">
-            <div><span class="who">Welcome!</span><div class="sub">THE CHEFZ ⌄</div></div>
-            <div class="phone-wa"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.5 15.3L2 22l4.8-1.5A10 10 0 1 0 12 2Z"/></svg></div>
-          </div>
-          <div class="phone-banner"><b>Join Our Ramadan Campaign</b>Let's run a successful RAM! ›</div>
-          <div class="phone-date">📅 Today, 9 March</div>
-          <div class="phone-row"><span>🛒 Number of Orders.</span><span>›</span></div>
-          <div class="phone-stat">
-            <div><div class="num">52</div><div class="lbl">Today</div></div>
-            <div style="text-align:right"><div class="num" style="font-size:12px;color:#999;">110</div><div class="lbl">Yesterday</div><div class="change">-52.6% ↘</div></div>
-          </div>
-          <div class="phone-row" style="margin-top:14px;"><span>⛔ Declined Orders</span><span>›</span></div>
-        </div>
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <div class="hero__phone-card">
+      <div class="hero__badge">
+        <span class="hero__badge-title">THE<br>CHEFZ</span>
+        <span class="hero__badge-sub">INSIGHT</span>
       </div>
+      <p class="hero__arabic">ضاعف أداء<br>مطعمك بنجاح</p>
+      <img class="hero__phone-img" src="assets/phone-mockup.png" alt="THE CHEFZ app preview">
     </div>
 
-    <div class="hero-right">
-      <h1 class="title">Welcome to THE CHEFZ<span class="accent">Working Hours Update Site</span></h1>
-      <p class="subtext">
+    <div class="hero__content">
+      <h1 class="hero__title">
+        Welcome to THE CHEFZ
+        <span class="hero__title-accent">Working Hours Update Site</span>
+      </h1>
+
+      <p class="hero__subtext">
         You can inform us with your NEW Working Hours<br>
-        <span class="or">or</span><br>
+        <span class="hero__or">or</span><br>
         Learn How to Change the Working Hours by YOURSELF
       </p>
+
       <div class="cta-row">
-        <a href="https://script.google.com/macros/s/AKfycbxfBxRaME2PO6NbaDZwZyN9RihlJD5qYaAQy1gt3QeRufx_mQb3ezLmayg8uYraQg4T/exec" target="_blank" rel="noopener" class="btn primary">
-          <span class="left">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+        <a href="https://script.google.com/macros/s/AKfycbxfBxRaME2PO6NbaDZwZyN9RihlJD5qYaAQy1gt3QeRufx_mQb3ezLmayg8uYraQg4T/exec" target="_blank" rel="noopener" class="btn btn--primary">
+          <span class="btn__left">
+            <img src="assets/calendar-days.svg" alt="" class="btn__icon">
             Inform Us with New WHs
           </span>
-          <span>›</span>
+          <img src="assets/chevron-right.svg" alt="" class="btn__chevron">
         </a>
-        <a href="#" class="btn secondary">
-          <span class="left">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h11l5 5v11H4z"/><path d="M9 9h6M9 13h6M9 17h3"/></svg>
+
+        <a href="#" class="btn btn--secondary">
+          <span class="btn__left">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h11l5 5v11H4z"/><path d="M9 9h6M9 13h6M9 17h3"/></svg>
             Learn How to Change WHs
           </span>
-          <span>›</span>
+          <img src="assets/chevron-right.svg" alt="" class="btn__chevron btn__chevron--dark">
         </a>
       </div>
+    </div>
+  </section>
 
-      <!-- mobile-only combined banner -->
-      <div class="mobile-banner">
-        <div class="badge">THE<br>CHEFZ<small>INSIGHT</small></div>
-        <div class="phone-mock">
-          <div class="phone-screen">
-            <div class="phone-statusbar" style="font-size:7px;"><span>9:41</span><span>📶🔋</span></div>
-            <div class="phone-topline" style="padding:2px 8px 4px;"><span class="who" style="font-size:7px;">Welcome!</span><div class="phone-wa" style="width:11px;height:11px;"></div></div>
-            <div class="phone-banner" style="margin:5px 6px 0; padding:6px; font-size:6px;"><b style="font-size:7px;">Join Our Ramadan Campaign</b>Let's run a successful RAM!</div>
-            <div class="phone-date" style="font-size:6px; margin:5px 6px 0;">📅 Today, 9 March</div>
-            <div class="phone-stat" style="margin:6px 6px 0;">
-              <div><div class="num" style="font-size:11px;">52</div><div class="lbl" style="font-size:6px;">Today</div></div>
-              <div style="text-align:right"><div class="num" style="font-size:8px;color:#999;">110</div><div class="change" style="font-size:6px;">-52.6%</div></div>
-            </div>
-          </div>
-        </div>
-        <div class="copy">
-          <div class="ar">ضاعف أداء<br>مطعمك بنجاح</div>
-          <p>Get real-time updates and insights on working hours to manage your operations better.</p>
-          <div class="rule"></div>
-        </div>
+  <!-- ================= ORANGE BAND (desktop) ================= -->
+  <section class="band">
+    <p class="band__heading">Get real-time updates and insights on working hours to manage your operations better.</p>
+
+    <div class="features">
+      <div class="feature">
+        <div class="feature__icon-circle"><img src="assets/clock-01.png" alt=""></div>
+        <h3>Real-time Updates</h3>
+        <p>Stay informed with the latest working hours.</p>
+      </div>
+      <div class="feature">
+        <div class="feature__icon-circle"><img src="assets/horizontal-chart-01.png" alt=""></div>
+        <h3>Smart Insights</h3>
+        <p>Make data-driven decisions to grow your business.</p>
+      </div>
+      <div class="feature">
+        <div class="feature__icon-circle"><img src="assets/frame.png" alt=""></div>
+        <h3>Operational Efficiency</h3>
+        <p>Optimize your schedule and improve productivity.</p>
       </div>
     </div>
-  </div>
+  </section>
 
-  <div class="band-wrap">
-    <div class="band-clip">
-      <p class="band-heading">Get real-time updates and insights on working hours to manage your operations better.</p>
-      <div class="features">
-        <div class="feature">
-          <div class="icon-circle"><svg viewBox="0 0 24 24" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+  <!-- ================= MOBILE-ONLY BANNER + FEATURES LIST ================= -->
+  <section class="mobile-panel">
+    <div class="mobile-banner">
+      <div class="mobile-banner__badge">
+        <span class="mobile-banner__badge-title">THE<br>CHEFZ</span>
+        <span class="mobile-banner__badge-sub">INSIGHT</span>
+      </div>
+      <img class="mobile-banner__phone" src="assets/phone-mockup.png" alt="THE CHEFZ app preview">
+      <div class="mobile-banner__copy">
+        <p class="mobile-banner__arabic">ضاعف أداء<br>مطعمك بنجاح</p>
+        <p class="mobile-banner__text">Get real-time updates and insights on working hours to manage your operations better.</p>
+        <span class="mobile-banner__rule"></span>
+      </div>
+    </div>
+
+    <div class="mobile-features">
+      <div class="mobile-feature">
+        <div class="mobile-feature__icon"><img src="assets/clock-01.png" alt=""></div>
+        <div>
           <h3>Real-time Updates</h3>
           <p>Stay informed with the latest working hours.</p>
         </div>
-        <div class="feature">
-          <div class="icon-circle"><svg viewBox="0 0 24 24" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M8 15v-3M12 15V9M16 15v-5"/></svg></div>
+      </div>
+      <div class="mobile-feature">
+        <div class="mobile-feature__icon"><img src="assets/horizontal-chart-01.png" alt=""></div>
+        <div>
           <h3>Smart Insights</h3>
           <p>Make data-driven decisions to grow your business.</p>
         </div>
-        <div class="feature">
-          <div class="icon-circle"><svg viewBox="0 0 24 24" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.6V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1-1.6 1.7 1.7 0 0 0-1.9.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.9 1.7 1.7 0 0 0-1.6-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.6-1 1.7 1.7 0 0 0-.3-1.9l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.9.3H9a1.7 1.7 0 0 0 1-1.6V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.6 1.7 1.7 0 0 0 1.9-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.9V9a1.7 1.7 0 0 0 1.6 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.6 1Z"/></svg></div>
+      </div>
+      <div class="mobile-feature">
+        <div class="mobile-feature__icon"><img src="assets/frame.png" alt=""></div>
+        <div>
           <h3>Operational Efficiency</h3>
           <p>Optimize your schedule and improve productivity.</p>
         </div>
       </div>
     </div>
-  </div>
 
-  <footer>
-    <div class="brand">THE CHEFZ</div>
-    <div class="tags">Insight <span class="dot">•</span> Data <span class="dot">•</span> Growth</div>
+    <div class="mobile-footer">
+      <div class="mobile-footer__brand">THE CHEFZ</div>
+      <div class="mobile-footer__tags">Insight <span class="dot">•</span> Data <span class="dot">•</span> Growth</div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__brand">THE CHEFZ</div>
+      <div class="footer__tags">Insight <span class="dot">•</span> Data <span class="dot">•</span> Growth</div>
+    </div>
   </footer>
 
 </body>
