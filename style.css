@@ -282,60 +282,10 @@ img{ display:block; max-width:100%; }
   .mobile-panel{ display:block; padding: 26px 20px 0; }
 
   .mobile-banner{
-    display:flex;
-    position: relative;
-    background: linear-gradient(150deg, var(--orange) 45%, var(--purple) 45%);
-    border-radius: 20px;
-    padding: 18px 18px 22px;
-    overflow:hidden;
-    align-items:flex-end;
-    gap: 14px;
-    text-align:left;
-  }
-
-  .mobile-banner__badge{
-    position:absolute;
-    top:16px; left:18px;
-    display:flex;
-    flex-direction: column;
-    color:#fff;
-    font-weight: 800;
-    font-style: italic;
-    font-size: 15px;
-    line-height: 1.1;
-  }
-  .mobile-banner__badge-sub{
-    font-size: 8px;
-    font-weight: 600;
-    letter-spacing: 2px;
-    font-style: normal;
-    margin-top: 2px;
-  }
-
-  .mobile-banner__phone{
-    width: 42%;
-    flex-shrink:0;
-    border-radius: 14px;
-  }
-
-  .mobile-banner__copy{
-    color:#fff;
-    padding-top: 44px;
-    flex:1;
-  }
-  .mobile-banner__arabic{
-    direction: rtl;
-    font-weight:800;
-    font-size:16px;
-    line-height:1.5;
-    margin-bottom:8px;
-  }
-  .mobile-banner__text{ font-size:12px; line-height:1.5; }
-  .mobile-banner__rule{
     display:block;
-    width:34px; height:2px;
-    background:#fff;
-    margin-top:10px;
+    width: 100%;
+    border-radius: 20px;
+    overflow:hidden;
   }
 
   /* ---- mobile feature list ---- */
@@ -368,12 +318,21 @@ img{ display:block; max-width:100%; }
   /* ---- mobile footer (wave) ---- */
   .mobile-footer{
     position: relative;
+    margin-top: 20px;
+  }
+  .mobile-footer__wave{
+    display:block;
+    width: 100%;
+    height: 46px;
+  }
+  .mobile-footer__wave path{ fill: var(--orange); }
+
+  .mobile-footer__body{
     background: var(--orange);
     color:#fff;
     text-align:center;
-    padding: 46px 20px 30px;
-    margin-top: 30px;
-    border-radius: 60% 60% 0 0 / 50px 50px 0 0;
+    padding: 4px 20px 34px;
+    margin-top: -1px;
   }
   .mobile-footer__brand{ font-weight:800; font-size: 18px; margin-bottom:6px; }
   .mobile-footer__tags{ display:flex; justify-content:center; gap:8px; font-weight:600; font-size:14px; }
